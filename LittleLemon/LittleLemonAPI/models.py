@@ -6,11 +6,16 @@ class Category(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=255, db_index=True)
 
+    def __str__(self)->str:
+        return self.name
+
 class MenuItem(models.Model):
     title = models.CharField(max_length=255, db_index=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, db_index=True)
+    description = models.TextField(default='', db_index=True)
+    ingredients = models.TextField(default='', db_index=True)
     featured = models.BooleanField(db_index=True)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
