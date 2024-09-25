@@ -1,4 +1,14 @@
-127.0.0.1:8000/admin
+customer: 
+	username: maha
+	password: Lemon@786!
+	token:7c4bcafda3d814a6ed1053d7629db342e5841fa6
 
-username: admin
-password: password
+admin:
+	username: munir
+	password: munir@1
+
+delivery_crew:
+	username: jan
+	password: Lemon@786!
+
+
